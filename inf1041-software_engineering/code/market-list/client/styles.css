@@ -132,3 +132,46 @@ tr:hover {
     background: rgb(200, 199, 199);
 }
 
+#editModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+#editModal .modal-content {
+    position: relative;
+    z-index: 10001;
+    background: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    width: 320px;
+    margin: auto;
+}
+
+#editModal h3 { 
+    margin-top: 0; 
+}
+
+#editModal .modal-body {
+    display: flex; flex-direction: column; gap: 8px; 
+}
+
+#editModal .modal-body input { 
+    width: 100%; padding: 6px; box-sizing: border-box; 
+}
+
+#editModal .modal-actions { 
+    display: flex; gap: 8px; justify-content: flex-end; 
+}
+
+th.icon-center { 
+    text-align: center; 
+}
+th.icon-center img { 
+    display: inline-block; 
+}
+

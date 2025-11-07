@@ -4,6 +4,7 @@ from src.app.dependencies import (
     get_add_comment_use_case,
     get_add_product_use_case,
     get_delete_product_use_case,
+    get_update_product_use_case,
     get_env_config_service,
     get_get_product_use_case,
     get_health_check_use_case,
@@ -37,6 +38,7 @@ def create_app() -> OpenAPI:
         list_use_case=get_list_products_use_case(),
         get_use_case=get_get_product_use_case(),
         delete_use_case=get_delete_product_use_case(),
+        update_use_case=get_update_product_use_case(),
     )
     register_comment_routes(application, get_add_comment_use_case())
     register_health_routes(application, get_health_check_use_case())

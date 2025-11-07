@@ -86,6 +86,30 @@ class SqlAlchemyProductRepository(ProductRepository):
         finally:
             session.close()
 
+    def update_by_name(self, old_name: str, new_product: Product) -> Optional[Product]:
+        session = self._session_factory()
+        try:
+            model = (
+                session.query(ProductModel)
+                .filter(ProductModel.nome == old_name)
+                .first()
+            )
+            if not model:
+                return None
+
+            model.nome = new_product.nome
+            model.quantidade = new_product.quantidade
+            model.valor = new_product.valor
+
+            session.commit()
+            session.refresh(model)
+            return product_mapper.to_domain(model)
+        except Exception:
+            session.rollback()
+            raise
+        finally:
+            session.close()
+
     def add_comment(self, product_id: int, comment: Comment) -> Product:
         session = self._session_factory()
         try:

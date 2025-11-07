@@ -30,6 +30,22 @@
         <button onclick="newItem()" class="addBtn">Adicionar</button>
     </section>
 
+    <!-- Modal para edição -->
+    <div id="editModal">
+        <div class="modal-content">
+            <h3>Editar item</h3>
+            <div class="modal-body">
+                <label>Nome:<input id="editName" type="text"></label>
+                <label>Quantidade:<input id="editQuantity" type="text"></label>
+                <label>Valor:<input id="editPrice" type="text"></label>
+                <div class="modal-actions">
+                    <button id="saveEdit">Salvar</button>
+                    <button id="cancelEdit">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Tabela com items existentes -->
     <section class="items">
         <table id="myTable">
@@ -37,7 +53,8 @@
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Valor</th>
-                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                <th class="icon-center"><img src="img/edit.png" width="15" height="15" alt="editar"></th>
+                <th class="icon-center"><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
             </tr>
         </table>
     </section>

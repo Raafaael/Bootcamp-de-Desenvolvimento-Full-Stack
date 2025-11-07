@@ -49,6 +49,15 @@ class ProdutoDelSchema(BaseModel):
     nome: str
 
 
+class ProdutoUpdateSchema(BaseModel):
+    """Payload para atualização de um produto pelo nome antigo."""
+
+    nome_antigo: str
+    nome: str
+    quantidade: Optional[int] = None
+    valor: float
+
+
 def apresenta_produto(produto: Product) -> dict:
     """Converte a entidade de domínio para resposta JSON."""
     return {
